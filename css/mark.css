@@ -1,0 +1,184 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.mark-section {
+    margin-bottom: 20px;
+}
+
+.mark-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+button {
+    display: inline-block;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:  #98c2be;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+#start-button{
+    display: inline-block;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:  #2f5855;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+#done-button{
+    font-size: 15px;
+    color: #86645e;
+    font-style: italic;
+    margin-top: 3%;
+    font-weight: bold;
+}
+#marking-progress{
+    font-size: 14px;
+    color: #86645e;
+    font-weight: bold;
+}
+#see-grades-button{
+    display: none;
+    display: inline-block;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:  #98c2be;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+#completion-message{
+    font-size: 15px;
+    color: #96635a;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #688C88;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#grades-display, #analysis-display {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+#loading-progress p {
+    font-size: 1.1em;
+}
+
+#completion-section {
+    text-align: center;
+}
+
+#see-grades-button {
+    background-color: #B79891;
+    color: #000000;
+    font-size: 15px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+
+/* marking loader */
+.loader-container {
+    position: relative;
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    margin: 10px auto;
+}
+
+.circle-loader {
+    position: relative;
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+}
+
+.circle {
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    background-clip: padding-box;
+}
+
+.mask {
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    position: absolute;
+    clip: rect(0px, 60px, 60px, 30px); /* Adjusted to match the new size */
+}
+
+.full,
+.half {
+    position: absolute;
+    width: 60px; /* Adjusted size */
+    height: 60px; /* Adjusted size */
+    border-radius: 50%;
+    background: #94716B;
+    animation: fill-animation 10s linear forwards;
+}
+
+.inset-circle {
+    position: absolute;
+    width: 40px; /* Adjusted size */
+    height: 40px; /* Adjusted size */
+    border-radius: 50%;
+    background-color: white;
+    top: 10px; /* Adjusted position */
+    left: 10px; /* Adjusted position */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inset-circle p {
+    margin: 0;
+    font-size: 13px; /* Adjust font size as necessary */
+    font-weight: bold;
+    line-height: 1; /* Ensure text is vertically centered */
+    text-align: center; /* Horizontally center the text */
+}
+
+@keyframes fill-animation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.intro-liners{
+    list-style-type: none;
+}
+.intro-liners li {
+    display: flex;
+    margin-top: 2%;
+    align-items: center; /* Align items vertically */
+   
+  }
+  
+  .intro-liners li i {
+    margin-right: 8px; /* Add space between the icon and the text */
+    color: #96635a;
+    font-size: 25px;
+    vertical-align: middle; /* Ensure the icon is vertically aligned with the text */
+  }
+  

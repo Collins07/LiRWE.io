@@ -1,0 +1,61 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.mark-section {
+    margin-bottom: 15px;
+    border-right: 5px solid #688C88;
+}
+
+.mark-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+button {
+    display: inline-block;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:  #98c2be;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+button:hover {
+    background-color: #688C88;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#grades-display, #analysis-display {
+    display: none;
+    background-color: #ece9e9;
+    margin-right: 3%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    height: 250px;
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+}
+/* style grades and analysis buttons */
+#grades-pdf-btn, #analysis-pdf-btn{
+    background-color: #d3aaa1;
+}
+
+#loading-progress p {
+    font-size: 1.1em;
+}
+
+#completion-section {
+    text-align: center;
+}
+

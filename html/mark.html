@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marking & Grading System </title>
+    <link rel="stylesheet" href="../css/mark.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Grading System Mockup</h1>
+
+        <div class="section">
+            <h2>1. Upload Teacher's Answer Sheet</h2>
+            <input type="file" id="teacher-upload">
+            <button onclick="uploadTeacherSheet()">Upload</button>
+        </div>
+
+        <div class="section">
+            <h2>2. Bulk Upload Student Answer Sheets</h2>
+            <input type="file" id="student-upload" multiple>
+            <button onclick="uploadStudentSheets()">Upload</button>
+        </div>
+
+        <div id="start-section" class="section" style="display: none;">
+            <button onclick="startMarking()" id="start-button">Start</button>
+            <div id="loading-progress" style="display: none;">
+                <p>Processing: <span id="loading-percentage">0%</span></p>
+            </div>
+            <button id="done-button" style="display: none; background-color: green;">Done</button>
+        </div>
+
+        <div id="completion-section" class="section" style="display: none;">
+            <p id="completion-message"></p>
+            <button id="see-grades-button" style="display: none; background-color: yellow;">See Grades</button>
+        </div>
+
+        <div class="section">
+            <h2>3. Display Grades and Reports</h2>
+            <button onclick="showGrades()">Show Grades</button>
+            <div id="grades-display"></div>
+        </div>
+
+        <div class="section">
+            <h2>4. Performance Analysis</h2>
+            <button onclick="showAnalysis()">Show Analysis</button>
+            <div id="analysis-display"></div>
+        </div>
+    </div>
+
+    <script src="../js/mark.js"></script>
+</body>
+</html>

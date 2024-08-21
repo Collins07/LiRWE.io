@@ -17,6 +17,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="main.css" rel="stylesheet">
+    <link href="./css/mark.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
@@ -36,14 +37,14 @@
         <ul class="nav-links">
 
             <li>
-                <a href="carbon-projects.html">
+                <a href="index.html">
                   <i class='bx bxs-edit-alt'></i>
                   <span class="links_name">Mark Exam Scripts</span>
                 </a>
               </li>
 
           <li>
-            <a href="#" >
+            <a href="./html/grades.html" >
               <i class='bx bxs-dashboard' ></i>
               <span class="links_name">Results<br></span>
             </a>
@@ -51,7 +52,7 @@
 
           
           <li>
-            <a href="esg.html">
+            <a href="./html/grades.html">
               <i class='bx bxs-bar-chart-alt-2'></i>
               <span class="links_name">Analyzed Reports</span>
             </a>
@@ -59,7 +60,7 @@
 
 
           <li>
-            <a href="../index.html">
+            <a href="index.html">
               <i class='bx bxs-home-alt-2'></i>
               <span class="links_name">Home</span>
              
@@ -122,23 +123,82 @@
 
               
                 
-                  <h5 class="fw-bold">Company X</h5>
+                  <h5 class="fw-bold mb-3">AI Marking & Grading System </h5>
 
                   <div class="overview-boxes">
 
                     <div class="container-fluid">
-                        <div class="row" id="esg-reports">
-                            <div class="col-md-6">
-                                <img src="../img/ESG-report.jpg" class="img-fluid" alt="..." >
-                            </div>
-                            <div class="col-md-6">
-                                <img src="../img/ESG-report (1).jpg" class="img-fluid" alt="..." >
+
+                        <!-- marking system -->
+
+                        <div class="row">
+                            <div class="col-md-4 mt-2">
+                                <div class="mark-section">
+                                    <h2 class="mb-3">1. Upload Teacher's Answer Sheet (.pdf format)</h2>
+                                    <input type="file" id="teacher-upload">
+                                    <button onclick="uploadTeacherSheet()">Upload</button>
+                                </div>
+                        
+                                <div class="mark-section">
+                                    <h2 class="mb-3">2. Bulk Upload Student Answer Sheets (.pdf format)</h2>
+                                    <input type="file" id="student-upload" multiple>
+                                    <button onclick="uploadStudentSheets()">Upload</button>
+                                </div>
+                                
+                                <div id="start-section" class="mark-section" style="display: none;">
+                                    <button onclick="startMarking()" id="start-button">Start Marking</button>
+                                    
+                                    <!-- marking loader -->
+                                    <div id="loading-progress" style="display: none; text-align: center;">
+                                        <div class="loader-container">
+                                            <div class="circle-loader">
+                                                <div class="circle">
+                                                    <div class="mask full">
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                    <div class="mask half">
+                                                        <div class="fill"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="inset-circle">
+                                                    <p id="loading-percentage">0%</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p id="marking-progress">Marking Student scripts...</p>
+                                    </div>
+                                    
+
+                                    <h5 id="done-button" style="display: none;">Wait for results compilation.....</h5>
+                                </div>
+                        
+                                <div id="completion-section" class="mark-section" style="display: none;">
+                                    <p id="completion-message"></p>
+                                    <a href="./html/grades.html" id="see-grades-button" style="display: none; ">View Results</a>
+                                </div>
+                                
                             </div>
 
-                            <div id="export-csv" class="col-md-2 mt-3">
-                              <a href="#" id="press" class="btn btn-sm btn-rounded">Export CSV</a>
-                          </div>
+                            <!-- image illustration -->
+                            <div class="col-md-3">
+                                <img class="img-fluid" src="./img/teacher7.jpg" alt="">
+                            </div>
+
+                            <!-- Introduction liners -->
+                            <div class="col-md-5">
+                              <ul class="intro-liners">
+                                <li><i class='bx bxs-check-circle'></i>Mark student exam scripts in just 30 seconds.</li>
+                                <li><i class='bx bxs-check-circle'></i>Generate detailed performance reports instantly.</li>
+                                <li><i class='bx bxs-check-circle'></i>Automate grading with 99% accuracy and consistency.</li>
+                                <li><i class='bx bxs-check-circle'></i>Analyze student strengths and weaknesses with ease.</li>
+                                <li><i class='bx bxs-check-circle'></i>Save teachers hours of manual marking and grading work.</li>
+                              </ul>
+                            </div>
+
                         </div>
+                 
+
+                        <!-- content end -->
                         
                     </div>
 
@@ -165,6 +225,7 @@
     
 
       <script src="main.js"></script>
+      <script src="../js/mark.js"></script>
    
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
