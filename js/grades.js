@@ -36,8 +36,8 @@ function showGrades() {
     gradesDisplay.innerHTML = ''; // Clear existing content
     
     const gradesText = `
-        <h3>Grades</h3>
-        <p>G001  - James Mwangi  - 90</p>
+        <h3>Student Results</h3>
+        <p>G001 - James Mwangi  - 90</p>
         <p>G002 - Aisha Njeri - 88</p>
         <p>G003 - Brian Odhiambo - 87</p>
         <p>G004 - Lilian Wambui - 86</p>
@@ -58,10 +58,10 @@ function showGrades() {
     
     typeWriter(gradesText, gradesDisplay);
 
-    // Show PDF button after 7 seconds
+    // Show PDF button after 10 seconds
     setTimeout(() => {
         gradesPdfBtn.style.display = 'block';
-    }, 7000);
+    }, 10000);
 }
 
 function showAnalysis() {
@@ -81,10 +81,10 @@ function showAnalysis() {
     
     typeWriter(analysisText, analysisDisplay);
 
-    // Show PDF button after 7 seconds
+    // Show PDF button after 10 seconds
     setTimeout(() => {
         analysisPdfBtn.style.display = 'block';
-    }, 7000);
+    }, 10000);
 }
 
 function downloadGradesPDF() {

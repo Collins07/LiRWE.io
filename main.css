@@ -60,7 +60,7 @@ html{
 }
 .sidebar .logo-details .logo_name{
   color: #fff;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 500;
   text-decoration: none;
 }
@@ -227,7 +227,7 @@ nav .sidebar-button i{
   padding: 20px 30px;
   margin: 0 20px;
   border-radius: 12px;
-  box-shadow: 0 5px 10px rgb(173, 206, 173);
+  box-shadow: 0 5px 10px #ac8278;
 }
 .home-content .sales-boxes .sales-details{
   display: flex;
